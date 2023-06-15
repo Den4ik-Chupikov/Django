@@ -8,7 +8,7 @@ def about(request):
     return HttpResponse("About")
 
 def create(request):
-    return HttpResponse("Create")
+    return render(request, "create.html")
 
 def update(request, txt):
     return HttpResponse("Update")
@@ -23,10 +23,10 @@ def change_password(request):
     return HttpResponse("Change Password")
 
 def register(request):
-    return HttpResponse("Register")
+    return render(request, "register.html")
 
 def login(request):
-    return HttpResponse("Login")
+    return render(request, "login.html")
 
 def logout(request):
     return HttpResponse("Logout")

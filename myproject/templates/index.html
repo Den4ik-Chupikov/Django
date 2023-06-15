@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://use.fontawesome.com/448c40b705.js"></script>
-    <link rel="stylesheet" href="{% static 'D:\VSCode_Django\myproject\templates\style\menu_style.css' %} ">
+    <link rel="stylesheet" href="{% static 'myproject\templates\style\menu_style.css' %} ">
 </head>
 <body>
-
+    
 <div class="container">
     <nav>
             <ul class="mcd-menu">
                 <li>
-                    <a href="">
+                    <a href="{% url 'index'%}">
                         <i class="fa fa-home"></i>
                         <strong>Home</strong>
                         <small>sweet home</small>
@@ -67,17 +67,24 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'create' %}">
                         <i class="fa fa-picture-o"></i>
-                        <strong>Portfolio</strong>
-                        <small>sweet home</small>
+                        <strong>Create blog</strong>
+                        <small>Tell me about...</small>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'register'%}">
                         <i class="fa fa-envelope-o"></i>
-                        <strong>Contacts</strong>
-                        <small>drop a line</small>
+                        <strong>Register</strong>
+                        <small>Lets start!</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <i class="fa fa-envelope-o"></i>
+                        <strong>Login</strong>
+                        <small>Who you are?</small>
                     </a>
                 </li>
                 <li class="float">
@@ -95,7 +102,7 @@
 
 
 
-{% block menu%}<p>Следующий Блок</p> {% endblock menu%}
+
 
 
 </body>
