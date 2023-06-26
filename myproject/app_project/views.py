@@ -42,3 +42,6 @@ def index(request):
 
 def extends(request):
     return render(request, 'extends.html')
+
+def form_view(request):
+    return render(request, 'forms/form.html')
