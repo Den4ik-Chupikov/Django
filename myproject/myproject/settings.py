@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 # Настройка для добавления файлов CSS 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "D:\VSCode_Django\myproject\\templates"
+    BASE_DIR / "D:\VSCode_Django\myproject\\templates\style\\"
 ]
 
 # Default primary key field type
