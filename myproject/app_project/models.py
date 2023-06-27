@@ -36,7 +36,7 @@ class Comment(models.Model):
 
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    article = models.ForeignKey(BlogPost, on_delete=models.DO_NOTHING)
+    post = models.ForeignKey(BlogPost, on_delete=models.DO_NOTHING)
     
     def __str__(self):
-        return self.user.username, self.article.id
+        return self.user.username

@@ -1,9 +1,16 @@
 {% include 'index.html' %}
 {% block menu%}
 
-<p>
     Now tell me who you are and begin the process
-</p>
-{% endblock menu%}
+<form method="post" action="{% url 'login'%}">
+    {% csrf_token %}
+    {{ form }}
+    <button type = "submint"> Login Me !</button>
+    <button>
+    <a href="{% url 'index' %}">To the Home page</a>
+    </button>
+</form>
+
+{% endblock %}
 
 

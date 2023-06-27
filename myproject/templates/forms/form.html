@@ -1,20 +1,14 @@
 {% include 'index.html' %}
 
 {% block content %}
-<form method="get" action="{% url 'form-view' %}">
-    <label>
-        <input type="text" name="my_name">
-    </label>
-    <button type="submit">Send name</button>
-</form>
-{% endblock content %}
 
+<form method = "POST" action="{% url 'form-view' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type = 'submint'> send form</button>
+</form>
+
+{% endblock %}
+<br>
 <p>New form<p>
 
-<form method="post" action="{% url 'form-view' %}">
-    {% csrf_token%}
-    <label>
-        <input type='text' name='sekret'>
-    </label>
-    <button type='submit'>Post form</button>
-</form>

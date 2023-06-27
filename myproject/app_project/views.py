@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import MyForm, LoginForm
 
 def blogs(request):
     return HttpResponse("Blogs")
@@ -26,7 +27,13 @@ def register(request):
     return render(request, "register.html")
 
 def login(request):
-    return render(request, "login.html")
+    if request.method == "POST":
+        form = LoginForm()
+        if form.is_valid():
+            return render(request, 'form_was_valid.html')
+    else:
+        form = LoginForm()   
+    return render(request, "login.html", {"form":form})
 
 def logout(request):
     return HttpResponse("Logout")
@@ -43,5 +50,14 @@ def index(request):
 def extends(request):
     return render(request, 'extends.html')
 
+# Обработка формы на валидность и возврат к начальной форме
 def form_view(request):
-    return render(request, 'forms/form.html')
+    if request.method == "POST":
+        form = MyForm(request.POST)
+        if form.is_valid():
+            return render(request, 'forms/form_was_valid.html')
+    else:
+        form = MyForm()    
+        
+    return render(request, 'forms/form.html', {'form': form})
+
